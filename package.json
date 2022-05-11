@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "express": "^4.18.1",
+    "sequelize": "^6.19.0",
+    "sqlite3": "^5.0.8"
+  },
+  "name": "esnaio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavomgaspar/esnaio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavomgaspar/esnaio/issues"
+  },
+  "homepage": "https://github.com/gustavomgaspar/esnaio#readme",
+  "description": ""
+}
