@@ -25,16 +25,24 @@ const Pessoa = db.define('pessoa',{
 });
 
 
+//criar x-www-form-urlencoded parser  
+
+
+Iserver.use(express.static('public'));  
+Iserver.get('/', (req, res) => {  
+   res.sendFile( __dirname + "/" + "index.html" );  
+}) ; 
+
 //newslatter
-Iserver.get('/newslatter/:nome/:email', (req,res) => {
+Iserver.post('/newslatter', (req,res) => {
     (async () => {
      
         try {
             const resultado = await db.sync();
      
             const resultadoCreate = await Pessoa.create({
-                nome: req.params.nome,
-                email: req.params.email
+                nome: req.body.nome,
+                email: req.body.email
             });
             console.log(resultadoCreate);
             res.send('<h1>Enviado</h1>');
