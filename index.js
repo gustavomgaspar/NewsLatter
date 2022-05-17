@@ -32,7 +32,7 @@ Iserver.use(express.static('public'));
 Iserver.get('/', (req, res) => {  
    res.sendFile( __dirname + "/" + "index.html" );  
 }) ; 
-
+/*
 //newslatter
 Iserver.post('/newslatter', (req,res) => {
     (async () => {
@@ -43,6 +43,27 @@ Iserver.post('/newslatter', (req,res) => {
             const resultadoCreate = await Pessoa.create({
                 nome: req.body.nome,
                 email: req.body.email
+            });
+            console.log(resultadoCreate);
+            var resposta = {};
+            resposta.retorno = "enviado";
+            res.json(resposta);
+        } catch (error) {
+            console.log(error);
+        }
+    })();
+});
+*/
+//newslatter
+Iserver.get('/newslatter/:nome/:email', (req,res) => {
+    (async () => {
+     
+        try {
+            const resultado = await db.sync();
+     
+            const resultadoCreate = await Pessoa.create({
+                nome: req.params.nome,
+                email: req.params.email
             });
             console.log(resultadoCreate);
             res.send('<h1>Enviado</h1>');
